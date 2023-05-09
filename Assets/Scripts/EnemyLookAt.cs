@@ -6,7 +6,7 @@ public class EnemyLookAt : MonoBehaviour
 {
 
     public GameObject playerObject;
-    public float lookSpeed = 100f;
+    public float lookSpeed = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +21,6 @@ public class EnemyLookAt : MonoBehaviour
         Quaternion lookAt = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * lookSpeed);
         transform.rotation = lookAt;
     }
+
+
 }
