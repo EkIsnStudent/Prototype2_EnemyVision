@@ -39,7 +39,7 @@ public class EnemyFollow : MonoBehaviour
     {
         distanceA = Vector3.Distance(hunter.transform.position, player.transform.position);
 
-        if (distanceA <= 25)
+        if (distanceA <= 10)
         {
 
             _enemyNavMeshAgent.destination = playerPos.position;
