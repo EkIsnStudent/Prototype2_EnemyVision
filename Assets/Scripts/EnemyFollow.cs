@@ -44,6 +44,9 @@ public class EnemyFollow : MonoBehaviour
 
             _enemyNavMeshAgent.destination = playerPos.position;
             _followAlways = true;
+        } else
+        {
+            _enemyNavMeshAgent.destination = _enemyNavMeshAgent.transform.position;
         }
     }
 }
