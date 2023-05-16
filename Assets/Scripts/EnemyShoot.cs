@@ -9,12 +9,13 @@ public class EnemyShoot : MonoBehaviour
     private float bulletTime;
 
     public GameObject enemyBullet;
-    public Transform spawnPoint;
+    private Transform spawnPoint;
     public float enemySpeed;
 
     void Start()
     {
-        
+        enemySpeed = 1500;
+        spawnPoint = this.gameObject.transform.GetChild(3);
     }
 
     void Update()
@@ -30,6 +31,7 @@ public class EnemyShoot : MonoBehaviour
         bulletTime = timer;
 
         GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+        bulletObj.SetActive(true);
         Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();
         bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
         Destroy(bulletObj, 5f);
