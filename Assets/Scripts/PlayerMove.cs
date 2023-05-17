@@ -38,6 +38,8 @@ public class PlayerMove : MonoBehaviour
         {
             gameObject.transform.forward = move;
         }
+
+        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, 1, this.gameObject.transform.position.z);
     }
 
     private void FixedUpdate()
