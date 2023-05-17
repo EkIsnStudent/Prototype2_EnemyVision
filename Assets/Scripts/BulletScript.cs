@@ -8,7 +8,13 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Debug.Log("Reduce Player Health");
+            Destroy(this.gameObject);
+           
+        }
+        else
+        {
+          
         }
     }
 }
