@@ -1616,6 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406322cfdca23354e93d643a78916854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHealth: 5
 --- !u!1 &774940854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!114 &1537399045
 MonoBehaviour:
@@ -4126,6 +4127,7 @@ MonoBehaviour:
   playerObj: {fileID: 1291402448}
   rb: {fileID: 1537399043}
   rotationSpeed: 10
+  cameraTrans: {fileID: 175796044}
   playerSpeed: 6
 --- !u!4 &1537399046
 Transform:

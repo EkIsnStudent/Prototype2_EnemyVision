@@ -13,7 +13,9 @@ public class PlayerMove : MonoBehaviour
 
     CharacterController controller;
 
-
+    [SerializeField]
+    
+    Cinemachine.CinemachineVirtualCamera cameraTrans;
 
     [SerializeField]
      float playerSpeed = 6.0f;
@@ -31,7 +33,16 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+     
+
+        Vector3 move = Quaternion.Euler(0, cameraTrans.transform.eulerAngles.y, 0) * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        
+
+
+
+        
+
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
@@ -40,9 +51,19 @@ public class PlayerMove : MonoBehaviour
         }
 
         this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, 1, this.gameObject.transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            this.gameObject.transform.position =  new Vector3(this.gameObject.transform.position.x + 10 * Time.deltaTime, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+        }
     }
 
     private void FixedUpdate()
     {
+    }
+
+    public void Dodge()
+    {
+        
     }
 }
