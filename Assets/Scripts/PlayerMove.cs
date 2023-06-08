@@ -52,9 +52,15 @@ public class PlayerMove : MonoBehaviour
 
         this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, 1, this.gameObject.transform.position.z);
 
+        //Dodging
         if (Input.GetKeyDown(KeyCode.K))
         {
-            this.gameObject.transform.position =  new Vector3(this.gameObject.transform.position.x + 10 * Time.deltaTime, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+            this.gameObject.transform.position = Quaternion.Euler(0, cameraTrans.transform.eulerAngles.y, 0) * new Vector3(this.gameObject.transform.position.x + 5 * Time.deltaTime, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            this.gameObject.transform.position =  Quaternion.Euler(0, cameraTrans.transform.eulerAngles.y, 0) * new Vector3(this.gameObject.transform.position.x + 5 * Time.deltaTime, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         }
     }
 
